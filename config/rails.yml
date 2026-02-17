@@ -1,0 +1,5 @@
+# Rails-specific RuboCop configuration
+# Use with: inherit_gem: { rubocop-mmenanno: config/rails.yml }
+
+Rails/RefuteMethods:
+  EnforcedStyle: refute

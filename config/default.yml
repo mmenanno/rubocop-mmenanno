@@ -1,0 +1,102 @@
+# Personal RuboCop base configuration
+
+AllCops:
+  NewCops: enable
+
+# --- Layout: Fixed Indentation ---
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Layout/CaseIndentation:
+  EnforcedStyle: end
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+Layout/HashAlignment:
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+# --- Layout: Multiline Line Breaks ---
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+  AllowMultilineFinalElement: true
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+  AllowMultilineFinalElement: true
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+  AllowMultilineFinalElement: true
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: true
+  AllowMultilineFinalElement: true
+
+Layout/LineLength:
+  Enabled: false
+
+# --- Style ---
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  IncludedMacros:
+    - '^assert'
+    - '^refute'
+  AllowedMethods:
+    - require
+    - require_relative
+    - raise
+    - puts
+    - print
+    - yield
+    - sleep
+    - warn
+    - include
+    - extend
+    - prepend
+    - gem
+    - source
+Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/WordArray:
+  EnforcedStyle: brackets
+Style/ClassMethodsDefinitions:
+  Enabled: true
+  EnforcedStyle: self_class
+Style/ModuleFunction:
+  EnforcedStyle: extend_self
+Style/Documentation:
+  Enabled: false
+Style/ReturnNil:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always_true
+  SafeAutoCorrect: true
+
+# --- Minitest ---
+
+Minitest/MultipleAssertions:
+  Max: 7

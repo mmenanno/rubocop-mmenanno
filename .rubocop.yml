@@ -1,0 +1,14 @@
+plugins:
+  - rubocop-performance
+  - rubocop-minitest
+  - rubocop-thread_safety
+  - rubocop-mmenanno
+
+AllCops:
+  TargetRubyVersion: 3.4
+  SuggestExtensions: false
+
+Naming/FileName:
+  Exclude:
+    - lib/rubocop-mmenanno.rb
+    - gems/rubocop-mmenanno-rails/lib/rubocop-mmenanno-rails.rb
