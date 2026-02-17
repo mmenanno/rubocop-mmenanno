@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths: [VERSION]
+  workflow_dispatch:
 
 jobs:
   ci:
@@ -33,11 +34,13 @@ jobs:
 
       - name: Publish base gem
         run: gem push rubocop-mmenanno-${{ steps.version.outputs.version }}.gem
+        timeout-minutes: 1
         env:
           GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
 
       - name: Publish rails gem
         run: gem push rubocop-mmenanno-rails-${{ steps.version.outputs.version }}.gem
+        timeout-minutes: 1
         env:
           GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
 
