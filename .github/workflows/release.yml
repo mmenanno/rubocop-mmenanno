@@ -36,13 +36,13 @@ jobs:
         run: gem push rubocop-mmenanno-${{ steps.version.outputs.version }}.gem
         timeout-minutes: 1
         env:
-          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY_BASE }}
 
       - name: Publish rails gem
         run: gem push rubocop-mmenanno-rails-${{ steps.version.outputs.version }}.gem
         timeout-minutes: 1
         env:
-          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY_RAILS }}
 
       - name: Create git tag
         run: |
