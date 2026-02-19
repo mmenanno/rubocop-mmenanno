@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
     "rubygems_mfa_required" => "true",
   }
 
-  spec.files = Dir.chdir(__dir__) { Dir["lib/**/*"] }
+  spec.files = Dir.glob("lib/**/*", base: __dir__)
   spec.require_paths = ["lib"]
 
   spec.add_dependency("rubocop-mmenanno", version)
