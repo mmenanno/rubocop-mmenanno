@@ -2,9 +2,6 @@
 
 AllCops:
   NewCops: enable
-  Exclude:
-    - "bin/**/*"
-    - "db/schema.rb"
 
 # --- Layout: Fixed Indentation ---
 
@@ -67,6 +64,7 @@ Style/MethodCallWithArgsParentheses:
   Enabled: true
   Exclude:
     - "/**/Gemfile"
+    - "bin/**/*"
   IncludedMacros:
     - '^assert'
     - '^refute'
@@ -100,6 +98,20 @@ Style/ReturnNil:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: always_true
   SafeAutoCorrect: true
+  Exclude:
+    - "bin/**/*"
+Style/ArgumentsForwarding:
+  Exclude:
+    - "bin/**/*"
+Style/GlobalStdStream:
+  Exclude:
+    - "bin/**/*"
+Layout/EmptyLineAfterMagicComment:
+  Exclude:
+    - "bin/**/*"
+ThreadSafety/DirChdir:
+  Exclude:
+    - "bin/**/*"
 
 # --- Minitest ---
 
