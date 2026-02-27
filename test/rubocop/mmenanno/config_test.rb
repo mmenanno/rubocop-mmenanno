@@ -27,6 +27,15 @@ module RuboCop
         assert_equal("enable", config.dig("AllCops", "NewCops"))
       end
 
+      def test_allcops_inherit_mode_merges_exclude
+        config = YAML.safe_load_file(@config_path)
+
+        inherit_mode = config.dig("AllCops", "inherit_mode")
+
+        assert_kind_of(Hash, inherit_mode)
+        assert_includes(inherit_mode["merge"], "Exclude")
+      end
+
       def test_config_keys_are_valid_rubocop_departments
         config = YAML.safe_load_file(@config_path)
 
