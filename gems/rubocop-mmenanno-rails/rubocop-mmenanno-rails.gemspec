@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-version = File.read(File.join(__dir__, "..", "..", "VERSION")).strip
+require_relative "../../lib/rubocop/mmenanno/version"
 
 Gem::Specification.new do |spec|
   spec.name = "rubocop-mmenanno-rails"
-  spec.version = version
+  spec.version = RuboCop::Mmenanno::VERSION
   spec.authors = ["Michael Menanno"]
   spec.email = ["michael@menanno.com"]
 
@@ -23,6 +23,6 @@ Gem::Specification.new do |spec|
   spec.files = Dir["lib/**/*"]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency("rubocop-mmenanno", version)
+  spec.add_dependency("rubocop-mmenanno", RuboCop::Mmenanno::VERSION)
   spec.add_dependency("rubocop-rails", "~> 2.30")
 end

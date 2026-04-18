@@ -2,6 +2,6 @@
 
 module RuboCop
   module Mmenanno
-    VERSION = File.read(File.join(__dir__, "..", "..", "..", "VERSION")).strip.freeze
+    VERSION = "0.1.9"
   end
 end

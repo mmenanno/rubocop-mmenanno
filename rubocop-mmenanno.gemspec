@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
     "rubygems_mfa_required" => "true",
   }
 
-  spec.files = Dir["config/**/*", "lib/**/*", "LICENSE.txt", "README.md", "VERSION"]
+  spec.files = Dir["config/**/*", "lib/**/*", "LICENSE.txt", "README.md"]
   spec.require_paths = ["lib"]
 
   spec.add_dependency("lint_roller", "~> 1.1")

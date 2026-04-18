@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches: [main]
-    paths: [VERSION]
+    paths: [lib/rubocop/mmenanno/version.rb]
   workflow_dispatch:
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Read version
         id: version
-        run: echo "version=$(cat VERSION)" >> "$GITHUB_OUTPUT"
+        run: echo "version=$(ruby -r ./lib/rubocop/mmenanno/version -e 'puts RuboCop::Mmenanno::VERSION')" >> "$GITHUB_OUTPUT"
 
       - name: Build base gem
         run: gem build rubocop-mmenanno.gemspec
@@ -51,7 +51,7 @@ jobs:
           git push origin "v${{ steps.version.outputs.version }}"
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: v${{ steps.version.outputs.version }}
           generate_release_notes: true
