@@ -116,6 +116,11 @@ ThreadSafety/DirChdir:
   Exclude:
     - "bin/**/*"
 
+# --- Naming ---
+
+Naming/RescuedExceptionsVariableName:
+  PreferredName: exception
+
 # --- Metrics ---
 
 Metrics/AbcSize:

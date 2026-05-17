@@ -36,6 +36,12 @@ module RuboCop
         assert_includes(inherit_mode["merge"], "Exclude")
       end
 
+      def test_rescued_exceptions_variable_name_prefers_exception
+        config = YAML.safe_load_file(@config_path)
+
+        assert_equal("exception", config.dig("Naming/RescuedExceptionsVariableName", "PreferredName"))
+      end
+
       def test_config_keys_are_valid_rubocop_departments
         config = YAML.safe_load_file(@config_path)
 
