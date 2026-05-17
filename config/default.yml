@@ -68,7 +68,7 @@ Style/MethodCallWithArgsParentheses:
   Exclude:
     - "/**/Gemfile"
     - "bin/**/*"
-  IncludedMacros:
+  IncludedMacroPatterns:
     - '^assert'
     - '^refute'
   AllowedMethods:
